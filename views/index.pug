@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Bienvendio a calculadora Soap 
+  p #{cuerpo}
+  form( method="POST" action ="/")
+    p Numero 1
+      input(type="number" name="num1")
+    p Numero 2
+      input(type="number" name="num2")
+    button(class=buttonClass type="submit") Sumar
+ 
+  p El resultado de la operacion es: #{resultado}
