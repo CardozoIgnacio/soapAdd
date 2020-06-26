@@ -18,7 +18,7 @@
 //Genero una peticion asincrona hacia el servicio soap
 const respuesta =  async (num1,num2) => {
     //Cargar el codigo XML de la suma
-    var xml = fs.readFileSync('./path/soap/code.xml');
+    var xml = fs.readFileSync('./code/soap/codeadd.xml');
   
    //Remplazo las variables con los datos suministrados por la pagina
     xml =xml.toString().replace('?',num1)
@@ -29,6 +29,7 @@ const respuesta =  async (num1,num2) => {
     const { headers, body, statusCode } = response;
  
     //Obtengo los resultados del la respuesta
+    //Mejorar usando DOM
     var parser = new xml2js.Parser();
     parser.parseString(body,(err,result)=>{
      
