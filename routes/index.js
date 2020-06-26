@@ -20,7 +20,7 @@ router.post('/',(req,res,next)=>{
   */
   const num2 = req.body['num2']
   const num1 =req.body['num1'];
- const solve =soapcalculator.resolucion(num1,num2).then((state)=>{
+  const solve =soapcalculator.resolucion(num1,num2).then((state)=>{
   var resXml = state[1];
   var estado= state[0]; 
   res.render('index', { title: 'Calculadora SOAP',cuerpo : 'Operacion suma', resultado :resXml  });
