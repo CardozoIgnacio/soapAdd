@@ -10,25 +10,29 @@ function parse(datoxml) {
 
 const  sumaResult= (datoXml)=>{
     var xmlDom=  parse(datoXml);
-    resultado=xmlDom.querySelector('AddResult').innerHTML
+    return resultado=xmlDom.querySelector('AddResult').innerHTML
+    
  }
 
  const  restaResult= (datoXml)=>{
     var xmlDom=  parse(datoXml);
-    resultado=xmlDom.querySelector('AddResult').innerHTML
+    return resultado=xmlDom.querySelector('SubtractResult').innerHTML
  }
 
 const  divResult= (datoXml)=>{
     var xmlDom=  parse(datoXml);
-    resultado=xmlDom.querySelector('AddResult').innerHTML
+    return resultado=xmlDom.querySelector('DivideResult').innerHTML
  }
 
 const  multResult= (datoXml)=>{
     var xmlDom=  parse(datoXml);
-    resultado=xmlDom.querySelector('AddResult').innerHTML
+    return resultado=xmlDom.querySelector('MultiplyResult').innerHTML
  }
 
 
 
  resultado.addResult=sumaResult
+ resultado.subResult=restaResult
+ resultado.divResult=divResult
+ resultado.mulResult=multResult
 module.exports=resultado
