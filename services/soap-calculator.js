@@ -1,8 +1,10 @@
   
  const soapRequest = require('easy-soap-request');
  const fs = require('fs');
- const soap = {}
+  const soap = {}
  const xml2js = require('xml2js')
+ 
+ const xmlEditor = require('./xmlResult')
  
 
 // Setear url y los cabazales
@@ -27,7 +29,9 @@ const respuesta =  async (num1,num2) => {
     //Realizo la peticion Soap
     const { response } = await soapRequest({ url: url, headers: sampleHeaders, xml: xml, timeout: 1000 }); 
     const { headers, body, statusCode } = response;
- 
+   
+     //console.log(body)
+     xmlEditor.addResult(body)
     //Obtengo los resultados del la respuesta
     //Mejorar usando DOM
     var parser = new xml2js.Parser();

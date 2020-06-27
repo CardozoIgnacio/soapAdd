@@ -25,7 +25,7 @@ router.post('/',(req,res,next)=>{
   var estado= state[0]; 
   res.render('index', { title: 'Calculadora SOAP',cuerpo : 'Operacion suma', resultado :resXml  });
   
-});
+}).catch((err)=>{console.log(err)});
 
   })
 
