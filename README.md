@@ -1,6 +1,5 @@
+[TOC]
 # Soap
-
-[[_TOC_]]
 
 ## Implementacion de servicio Soap
 
