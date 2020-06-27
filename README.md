@@ -1,4 +1,4 @@
-[TOC]
+<!--TOC--> 
 # Soap
 
 ## Implementacion de servicio Soap
