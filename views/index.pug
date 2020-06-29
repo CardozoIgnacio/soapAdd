@@ -2,13 +2,13 @@ extends layout
 
 block content
   h1= title
-  p Bienvendio a calculadora Soap 
-  p #{cuerpo}
-  form( method="POST" action ="/")
+  h2 Bienvendio a calculadora Soap 
+  h3 #{cuerpo}
+  div
     p Numero 1
-      input(type="number" name="num1")
+      input(type="number" name="num1" id ="num1")
     p Numero 2
-      input(type="number" name="num2")
+      input(type="number" name="num2" id="num2")
     
     p Suma
       input(type="radio" name="oper" value="suma" checked ) 
@@ -18,6 +18,9 @@ block content
       input(type="radio" name="oper" value="div")
     p Multiplicacion
       input(type="radio" name="oper" value="mult")
-    button(class=buttonClass type="submit") Resultado
+    button( onclick="resultado()" ) Resultado
  
-  p El resultado de la operacion es: #{resultado}
+  h3(id="solucion") 
+  div(id="respuestas")
+
+  script(src="/javascripts/displayDataCalc.js")

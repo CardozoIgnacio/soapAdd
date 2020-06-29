@@ -18,13 +18,19 @@ router.post('/',(req,res,next)=>{
   console.log("El codigo de estado es", estado);
   console.log("El resultado de la operacion en xml es",resXml)
   */
+  console.log(req.body)
   const num2 = req.body['num2']
   const num1 =req.body['num1'];
   const oper = req.body['oper']
+  
   const solve =soapcalculator.resolucion(num1,num2,oper).then((state)=>{
   var resXml = state[1];
   var estado= state[0]; 
-  res.render('index', { title: 'Calculadora SOAP',cuerpo : 'Operacion suma', resultado :resXml  });
+  var reqXml=state[2];
+  var respXml=state[3];
+  //res.render('index', { title: 'Calculadora SOAP',cuerpo : 'Operacion suma', resultado :resXml  });
+  
+  res.send({'respuesta': resXml,'estado': estado,'reqXml':reqXml,'respXml':respXml})
   
 }).catch((err)=>{console.log(err)});
 

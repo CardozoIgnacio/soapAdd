@@ -77,7 +77,7 @@ const respuesta = async (num1, num2, oper) => {
        solucion = result['soap:Envelope']['soap:Body'][0]['AddResponse'][0]['AddResult'][0]
     })*/
 
-  return [statusCode, solucion];
+  return [statusCode, solucion,xml,body];
 };
 
 soap.resolucion = respuesta;
