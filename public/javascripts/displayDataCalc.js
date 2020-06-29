@@ -39,13 +39,16 @@ function resultado() {
     .then(response => {
         //console.log('Success:', response);
         //XML enviado al servidor
+        var br= document.createElement("hr")
+        respuestas.prepend(br)
+
         var requestXml = document.createElement("pre")
         var descReq= document.createElement("h2")
         var divreq = document.createElement("div")
 
         
         requestXml.innerText=response.reqXml
-        console.log(response.reqXml)
+        //console.log(response.reqXml)
         descReq.innerText="Request enviada al servidor"
         
         divreq.prepend(requestXml)
@@ -65,6 +68,8 @@ function resultado() {
         divres.prepend(descRes)
         respuestas.prepend(divres)
         
+        num1Nodo.value="";
+        num2Nodo.value="";
         
         
     });

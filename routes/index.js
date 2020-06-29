@@ -17,8 +17,8 @@ router.post('/',(req,res,next)=>{
   console.log(state);
   console.log("El codigo de estado es", estado);
   console.log("El resultado de la operacion en xml es",resXml)
-  */
   console.log(req.body)
+  */
   const num2 = req.body['num2']
   const num1 =req.body['num1'];
   const oper = req.body['oper']
