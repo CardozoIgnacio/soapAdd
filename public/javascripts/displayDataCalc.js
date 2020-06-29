@@ -39,11 +39,13 @@ function resultado() {
     .then(response => {
         //console.log('Success:', response);
         //XML enviado al servidor
-        var requestXml = document.createElement("p")
+        var requestXml = document.createElement("pre")
         var descReq= document.createElement("h2")
         var divreq = document.createElement("div")
 
+        
         requestXml.innerText=response.reqXml
+        console.log(response.reqXml)
         descReq.innerText="Request enviada al servidor"
         
         divreq.prepend(requestXml)
@@ -51,10 +53,11 @@ function resultado() {
         respuestas.prepend(divreq)
 
         //XMl resupesta del servidor
-        var resupestaXml = document.createElement("p")
+        var resupestaXml = document.createElement("pre")
         var descRes=document.createElement("h2")
         var divres = document.createElement("div")
 
+        
         resupestaXml.innerText=response.respXml
         descRes.innerText="Respuesta enviada por el servidor"
         

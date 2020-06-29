@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var soapcalculator = require('../services/soap-calculator')
-
+var format = require('xml-formatter');
 
 
 /* GET home page. */
@@ -29,7 +29,18 @@ router.post('/',(req,res,next)=>{
   var reqXml=state[2];
   var respXml=state[3];
   //res.render('index', { title: 'Calculadora SOAP',cuerpo : 'Operacion suma', resultado :resXml  });
-  
+  respXml=format(respXml,{
+    indentation: '\t', 
+    filter: (node) => node.type !== 'Comment', 
+    collapseContent: true, 
+    lineSeparator: '\n'
+})
+  reqXml=format(reqXml,{
+    indentation: '\t', 
+    filter: (node) => node.type !== 'Comment', 
+    collapseContent: true, 
+    lineSeparator: '\n'
+})
   res.send({'respuesta': resXml,'estado': estado,'reqXml':reqXml,'respXml':respXml})
   
 }).catch((err)=>{console.log(err)});
