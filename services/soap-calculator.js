@@ -1,7 +1,7 @@
 const soapRequest = require("easy-soap-request");
 const fs = require("fs");
 const soap = {};
-const xml2js = require("xml2js");
+//const xml2js = require("xml2js");
 
 const xmlEditor = require("./xmlResult");
 

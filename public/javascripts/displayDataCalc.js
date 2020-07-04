@@ -26,7 +26,7 @@ function resultado() {
     formData.append('oper', oper);
     
     
-    fetch('http://localhost:3000/', {
+    fetch('https://lovely-wind-cave-04869.herokuapp.com/', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
