@@ -38,7 +38,18 @@ function resultado() {
     .catch(error => console.error('Error:', error))
     .then(response => {
         //console.log('Success:', response);
-       
+       //XMl resupesta del servidor
+        var resupestaXml = document.createElement("pre")
+        var descRes=document.createElement("h2")
+        var divres = document.createElement("div")
+
+        
+        resupestaXml.innerText=response.respXml
+        descRes.innerText="Respuesta enviada por el servidor"
+        
+        divres.prepend(resupestaXml)
+        divres.prepend(descRes)
+        respuestas.prepend(divres)
         //XML enviado al servidor
         var br= document.createElement("hr")
         respuestas.prepend(br)
@@ -56,18 +67,7 @@ function resultado() {
         divreq.prepend(descReq)
         respuestas.prepend(divreq)
 
-        //XMl resupesta del servidor
-        var resupestaXml = document.createElement("pre")
-        var descRes=document.createElement("h2")
-        var divres = document.createElement("div")
-
         
-        resupestaXml.innerText=response.respXml
-        descRes.innerText="Respuesta enviada por el servidor"
-        
-        divres.prepend(resupestaXml)
-        divres.prepend(descRes)
-        respuestas.prepend(divres)
         
         //Resultado
         var resultadoXml = document.createElement("h1")
