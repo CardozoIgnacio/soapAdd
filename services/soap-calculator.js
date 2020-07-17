@@ -51,18 +51,23 @@ const respuesta = async (num1, num2, oper) => {
 
   //console.log(body)
   var solucion;
+  var operador;
   switch (oper) {
     case "suma":
       solucion = xmlEditor.addResult(body);
+      operador="+"
       break;
     case "resta":
       solucion = xmlEditor.subResult(body);
+      operador="-"
       break;
     case "div":
       solucion = xmlEditor.divResult(body);
+      operador="/"
       break;
     case "mult":
       solucion = xmlEditor.mulResult(body);
+      operador="*"
       break;
     default:
       console.log("Error!!!");
@@ -77,7 +82,7 @@ const respuesta = async (num1, num2, oper) => {
        solucion = result['soap:Envelope']['soap:Body'][0]['AddResponse'][0]['AddResult'][0]
     })*/
 
-  return [statusCode, solucion,xml,body];
+  return [statusCode, solucion, xml, body,operador];
 };
 
 soap.resolucion = respuesta;

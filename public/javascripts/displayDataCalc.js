@@ -38,6 +38,7 @@ function resultado() {
     .catch(error => console.error('Error:', error))
     .then(response => {
         //console.log('Success:', response);
+       
         //XML enviado al servidor
         var br= document.createElement("hr")
         respuestas.prepend(br)
@@ -68,6 +69,17 @@ function resultado() {
         divres.prepend(descRes)
         respuestas.prepend(divres)
         
+        //Resultado
+        var resultadoXml = document.createElement("h1")
+        var resp = document.createElement("h3")
+        var divResp= document.createElement("div")
+
+        resultadoXml.innerText="El resultado de la operacion es:"
+        resp.innerText=response.respuesta
+        
+        divResp.prepend(resp)
+        divResp.prepend(resultadoXml)
+        respuestas.prepend(divResp)
         num1Nodo.value="";
         num2Nodo.value="";
         
