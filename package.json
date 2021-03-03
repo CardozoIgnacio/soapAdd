@@ -14,7 +14,7 @@
     "http-errors": "~1.6.3",
     "jsdom": "^16.2.2",
     "morgan": "~1.9.1",
-    "pug": "^3.0.0",
+    "pug": "^3.0.1",
     "soap": "^0.31.0",
     "strong-soap": "^2.0.0",
     "xml-formatter": "^2.1.1",
